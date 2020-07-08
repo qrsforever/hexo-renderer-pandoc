@@ -75,6 +75,8 @@ var pandocRenderer = function(data, options){
     if (config && config.template) {
       args.push("--template=" + config.template);
     }
+    // lidong add for filter using
+    args.push(...["-M", "datapath=" + data.path]);
 
     // do not apply `--standalone`,
     // header/footer are to be added by Hexo
